@@ -30,7 +30,6 @@ Você vai me ajudar como TUTOR em um projeto da disciplina C06 – Programação
   threads, UML completo.
 - A apresentação NÃO tem slides: o professor faz perguntas INDIVIDUAIS só sobre Orientação a
   Objetos, com o código e o UML na tela. Cada integrante responde pela própria parte.
-- Minha parte no projeto é: [DESCREVA SUA PARTE AQUI]
 
 ## Regras técnicas (obrigatórias)
 - Java 21. Não use recursos de versões posteriores nem preview features. O projeto é Maven
