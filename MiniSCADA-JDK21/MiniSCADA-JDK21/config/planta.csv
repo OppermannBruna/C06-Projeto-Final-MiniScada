@@ -1,5 +1,0 @@
-# id;tipo;nome;parametros
-F01;FORNO;Forno principal;160;180;3;230
-E01;ESTEIRA;Esteira de transporte;1.2;3.0
-P01;EMPACOTADORA;Empacotadora automática;80;0.8;10
-L01;PALETIZADOR;Paletizador;100
