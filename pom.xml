@@ -13,4 +13,8 @@
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <build>
+        <!-- O código está em src/ (e não em src/main/java), então avisamos o Maven -->
+        <sourceDirectory>src</sourceDirectory>
+    </build>
 </project>

@@ -1,5 +1,0 @@
-# A configuração é editada manualmente; formato: id;tipo;nome;parametros
-F01;FORNO;Forno principal;160,00;180,00;2.0;250.0
-E01;ESTEIRA;Esteira de transporte;1,20;3,00
-P01;EMPACOTADORA;Empacotadora automática;80,00;0.5;10.0
-L01;PALETIZADOR;Paletizador;100

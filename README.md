@@ -28,7 +28,16 @@ operam em paralelo, enquanto o supervisório monitora sensores, gera alarmes, re
 
 Pré-requisito: JDK 21.
 
-No IntelliJ: abra a pasta do projeto (é importado como Maven) e rode `com.grupo8.scada.Main`.
+No IntelliJ: abra a pasta do projeto (é importado como Maven) e rode `com.grupo8.scada.Main`. A pasta de trabalho da execução deve ser a raiz do projeto (onde está `config/`).
+
+Pelo terminal, na raiz do projeto:
+
+```bash
+javac -encoding UTF-8 -d out $(find src -name "*.java")
+java -cp out com.grupo8.scada.Main
+```
+
+Formato do `config/planta.csv`, menu e demais detalhes: [`docs/guia-tecnico.md`](docs/guia-tecnico.md).
 
 ## Requisitos de POO atendidos
 
@@ -45,7 +54,7 @@ No IntelliJ: abra a pasta do projeto (é importado como Maven) e rode `com.grupo
 
 ## Diagrama UML
 
-O diagrama UML completo da solução fica em [`docs/uml/`](docs/uml/).
+O diagrama UML completo da solução fica em [`docs/uml/`](docs/uml/): imagem [`MiniSCADA.png`](docs/uml/MiniSCADA.png), versão Mermaid [`diagrama-classes.md`](docs/uml/diagrama-classes.md) (renderizada pelo GitHub) e fonte PlantUML [`MiniSCADA.puml`](docs/uml/MiniSCADA.puml).
 
 ## Uso de Inteligência Artificial
 
