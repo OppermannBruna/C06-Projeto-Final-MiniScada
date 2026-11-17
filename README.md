@@ -43,14 +43,14 @@ Formato do `config/planta.csv`, menu e demais detalhes: [`docs/guia-tecnico.md`]
 
 | Critério | Onde está no código |
 |----------|---------------------|
-| Classes (membros, métodos, construtores) | |
-| Herança | |
-| Polimorfismo | |
-| Interfaces | |
-| Classes abstratas | |
-| Tratamento de erros | |
-| Arquivos / Banco de dados | |
-| Threads | |
+| Classes (membros, métodos, construtores) | Todas as classes de `src/com/grupo8/scada/`. Atributos privados com getters e construtores que validam os dados (`IllegalArgumentException`) em `Equipamento`, `Forno`, `Esteira`, `Empacotadora`, `Paletizador` e `Leitura`. Exemplos de métodos: `Forno.executarCiclo()`, `Alarme.resolver()`, `GerenciadorAlarmes.registrar()`. |
+| Herança | `Forno`, `Esteira`, `Empacotadora` e `Paletizador` estendem `Equipamento` (`model/`). `ConfiguracaoInvalidaException`, `EquipamentoEmFalhaException` e `SetpointInvalidoException` estendem `ScadaException`, que estende `Exception` (`exceptions/`). |
+| Polimorfismo | `Supervisorio` guarda uma `List<Equipamento>`, e `TarefaEquipamento` chama `equipamento.ciclo()` sem saber o tipo: cada subclasse sobrescreve `executarCiclo()` e `getTipo()` (`Forno` também sobrescreve `aoManterFalha()` e `podeRearmar()`). `MonitorProcesso` e `Historiador` tratam qualquer `Monitoravel` via `gerarLeituras()`. `ConsoleOperador` usa `Ajustavel` e `Manutenivel` sem conhecer a classe concreta. |
+| Interfaces | `Ajustavel` (`Forno`, `Esteira`), `Monitoravel` (os 4 equipamentos) e `Manutenivel` (`Paletizador`), em `model/interfaces/`. `Repositorio<T>` (genérica), implementada por `RepositorioEquipamentosCsv` (`persistence/`). As threads implementam `Runnable`. |
+| Classes abstratas | `Equipamento` (`model/Equipamento.java`): `executarCiclo()` e `getTipo()` são abstratos, e `ciclo()` é o método-modelo `final` que chama `executarCiclo()`. Não existe "equipamento genérico". |
+| Tratamento de erros | Exceções próprias em `exceptions/` (`ScadaException` e subclasses, verificadas). `try/catch` em `TarefaEquipamento`, `MonitorProcesso` e `Historiador` (a thread não morre por erro), em `RepositorioEquipamentosCsv.carregar()` (informa a linha inválida do CSV), em `ConsoleOperador.executar()` (`NumberFormatException`, `SetpointInvalidoException`) e em `Main`. |
+| Arquivos / Banco de dados | Sem banco de dados; usa arquivos CSV. `config/planta.csv` é lido e salvo por `RepositorioEquipamentosCsv` (se não existir, `Main` cria a planta padrão). `historico.csv` (leituras) e `alarmes.csv` são gravados por `RegistradorCsv`. |
+| Threads | Criadas em `Supervisorio.iniciar()`: uma `TarefaEquipamento` por equipamento, mais `MonitorProcesso` (alarmes) e `Historiador` (CSV). Encerradas com `interrupt()` em `pararEmergencia()` e `desligarSistema()`. Dados compartilhados protegidos com `synchronized` (`Equipamento` e subclasses, `GerenciadorAlarmes`, `RegistradorCsv`) e `CopyOnWriteArrayList` (`Supervisorio`). |
 
 ## Diagrama UML
 
