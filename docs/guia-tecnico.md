@@ -56,7 +56,6 @@ Parâmetros:
 - Os métodos que acessam estados compartilhados usam sincronização ou coleções concorrentes.
 - A simulação é didática; não representa um sistema industrial certificado ou adequado para controlar máquinas reais.
 - O grupo deve revisar e compreender o código antes da apresentação.
-- A IA foi utilizada como apoio para estruturar e gerar uma primeira versão do código; a ferramenta utilizada foi ChatGPT (OpenAI). O grupo deve declarar no README o uso real que fez da IA, conforme as regras da disciplina.
 
 ## Diagrama UML
 
