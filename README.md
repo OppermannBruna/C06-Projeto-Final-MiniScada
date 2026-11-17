@@ -58,8 +58,10 @@ O diagrama UML completo da solução fica em [`docs/uml/`](docs/uml/): imagem [`
 
 ## Uso de Inteligência Artificial
 
-_Declaração obrigatória: o grupo utilizou IA? Como? Qual ferramenta?_
-
 - **Utilizou IA?** Sim.
 - **Ferramenta(s):** Claude Code (Anthropic).
-- **Como:** criação e configuração inicial do repositório (estrutura de pastas, `.gitignore`, `pom.xml` e este README) e proposta inicial de arquitetura/UML em `docs/arquitetura.md`, revisada e discutida pelo grupo. O Gemini (Google) foi usado para levantar ideias de tema. _Atualizar conforme o uso ao longo do projeto._
+- **Como foi usada:**
+  - Criar a estrutura inicial do repositório (pastas, `.gitignore`, `pom.xml`, README) e a proposta de arquitetura em `docs/arquitetura.md`, que o grupo revisou e discutiu.
+  - Analisar o código existente, apontar bugs e corrigi-los (formato dos CSVs, retomada dos equipamentos após falha ou manutenção, duplicação de alarmes, validação do setpoint do forno, entre outros).
+  - Reorganizar a estrutura de pastas do projeto.
+  - Gerar o diagrama UML atualizado (`docs/uml/`) e preencher a tabela de requisitos de POO deste README.
