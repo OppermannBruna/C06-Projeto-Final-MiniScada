@@ -2,7 +2,7 @@
 
 Projeto final da disciplina **C06 – Programação Orientada a Objetos**, Prof. Christopher Lima.
 
-> 🚧 Em desenvolvimento. A proposta de arquitetura está em [`docs/arquitetura.md`](docs/arquitetura.md).
+A arquitetura do projeto está em [`docs/arquitetura.md`](docs/arquitetura.md).
 
 ## Sobre o projeto
 
@@ -59,9 +59,12 @@ O diagrama UML completo da solução fica em [`docs/uml/`](docs/uml/): imagem [`
 ## Uso de Inteligência Artificial
 
 - **Utilizou IA?** Sim.
-- **Ferramenta(s):** Claude Code (Anthropic).
-- **Como foi usada:**
+- **Ferramenta(s):** Claude Code (Anthropic), ChatGPT (OpenAI) e Gemini (Google).
+- **Gemini:** levantar ideias de tema e relacionar cada critério do enunciado a uma parte do projeto.
+- **ChatGPT:** gerar uma versão do código a partir da arquitetura combinada; o grupo comparou as versões, escolheu a base e estudou o código.
+- **Claude Code** foi usado para:
   - Criar a estrutura inicial do repositório (pastas, `.gitignore`, `pom.xml`, README) e a proposta de arquitetura em `docs/arquitetura.md`, que o grupo revisou e discutiu.
   - Analisar o código existente, apontar bugs e corrigi-los (formato dos CSVs, retomada dos equipamentos após falha ou manutenção, duplicação de alarmes, validação do setpoint do forno, entre outros).
   - Reorganizar a estrutura de pastas do projeto.
   - Gerar o diagrama UML atualizado (`docs/uml/`) e preencher a tabela de requisitos de POO deste README.
+  - Tutoria durante a parte de equipamentos (revisão de código e explicação de conceitos) e revisão de conceitos de POO para a apresentação.
